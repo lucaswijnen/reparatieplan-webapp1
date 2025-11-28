@@ -1,4 +1,220 @@
 body {
-  font-family: "Bricolage Grotesque", sans-serif;
-  background-color: blue
+    font-family: "Bricolage Grotesque", sans-serif;
+    background-color: #FAF7F2;
+    margin: 0;
+    padding: 0;
+    color: #0A3750;
 }
+
+/* HEADER */
+.header {
+    background-color: #FAF7F2;
+    padding: 20px 0;
+}
+
+.header-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    margin: 0;
+    font-size: 26px;
+    color: #0A3750;
+}
+
+.nav {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #0A3750;
+    font-size: 16px;
+    padding: 6px 8px;
+    display: inline-block;
+}
+
+.underline {
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+}
+
+.login-button {
+    padding: 6px 14px;
+    border: 1px solid #E6E6E6;
+    border-radius: 6px;
+    transition: 0.2s;
+}
+
+.login-button:hover {
+    border-color: #0B5C73;
+    color: #0B5C73;
+}
+
+
+/* intro van de pagina voor gebruikers */
+.intro-section {
+    text-align: center;
+    margin-top: 70px;
+}
+
+.intro-title {
+    font-size: 38px;
+    color: #083A55;
+    margin-bottom: 10px;
+}
+
+.intro-text {
+    font-size: 18px;
+    color: #0A3750;
+    margin-bottom: 35px;
+}
+
+.search-form {
+    display: flex;
+    margin-bottom: 60px;
+    justify-content: center;
+    gap: 10px;
+}
+
+.search-input {
+    width: 300px;
+    padding: 12px;
+    border: 1px solid #E6E6E6;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+.search-button {
+    padding: 12px 22px;
+    background-color: #0B5C73;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+}
+/* einde-intro pagina */
+
+/* login-pagina */
+.login-section {
+    display: flex;
+    justify-content: center;
+    margin-top: 80px;
+}
+
+.login-form {
+    background: #ffffff;
+    border: 1px solid #E6E6E6;
+    padding: 30px;
+    width: 320px;
+    border-radius: 12px;
+    text-align: left;
+}
+
+.login-title {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #083A55;
+    font-size: 26px;
+}
+
+.login-label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+    color: #0A3750;
+}
+
+.login-input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #E6E6E6;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.login-submit {
+    display: inline-block;
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    background-color: #0B5C73;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.login-submit:hover {
+    background-color: #094e63;
+}
+/* einde-login-pagina */
+
+/* about-pagina */
+.about-section {
+    margin-top: 70px;
+}
+
+.about-container {
+    max-width: 1000px;
+    margin: 0 auto 60px auto;
+    padding: 0 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.about-text-block {
+    flex: 1;
+    min-width: 260px;
+}
+
+.about-title {
+    font-size: 32px;
+    color: #083A55;
+    margin-bottom: 15px;
+}
+
+.about-text {
+    font-size: 16px;
+    color: #0A3750;
+    margin-bottom: 12px;
+}
+
+.about-info-block {
+    flex: 1;
+    min-width: 260px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.about-card {
+    background-color: #ffffff;
+    border: 1px solid #E6E6E6;
+    border-radius: 10px;
+    padding: 14px 16px;
+}
+
+.about-card-title {
+    margin: 0 0 6px 0;
+    font-size: 18px;
+    color: #083A55;
+}
+
+.about-card-text {
+    margin: 0;
+    font-size: 14px;
+    color: #0A3750;
+}
+/* einde-about-pagina */
+
