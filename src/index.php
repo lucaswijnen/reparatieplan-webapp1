@@ -12,19 +12,17 @@
 </head>
 <body>
     
-
 <header class="header">
     <div class="header-container">
         <h1 class="logo">The Book Haven</h1>
         <nav class="nav">
-            <a href="index.html" class="nav-link underline">Home</a>
-            <a href="pages/about.html" class="nav-link">About</a>
-            <a href="pages/books.html" class="nav-link">Books</a>
-            <a href="pages/login.html" class="nav-link login-button">Login</a>
+            <a href="index.php" class="nav-link underline">Home</a>
+            <a href="pages/about.php" class="nav-link">About</a>
+            <a href="pages/books.php" class="nav-link">Books</a>
+            <a href="pages/login.php" class="nav-link login-button">Login</a>
         </nav>
     </div>
 </header>
-
 
     <section class="intro-section">
         <h2 class="intro-title">Discover Our Library</h2>
@@ -37,6 +35,5 @@
             <button type="submit" class="search-button">Search</button>
         </form>
     </section>
-
 </body>
 </html>

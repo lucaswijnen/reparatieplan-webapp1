@@ -1,3 +1,20 @@
+<?php
+$host="db";
+$Database="bieb";
+$User="user";
+$Password="user";
+
+try {
+    $pdo = new PDO(
+        "mysql:host=$host;dbname=$Database;charset=utf8", $User, $Password);
+        
+    echo "Verbonden";
+} catch (PDOException $error) {
+    echo "fout";
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,10 +34,10 @@
         <div class="header-container">
             <h1 class="logo">The Book Haven</h1>
             <nav class="nav">
-                <a href="../index.html" class="nav-link ">Home</a>
-                <a href="/pages/about.html" class="nav-link">About</a>
-                <a href="/pages/books.html" class="nav-link">Books</a>
-                <a href="/pages/login.html" class="nav-link login-button">Login</a>
+                <a href="../index.php" class="nav-link ">Home</a>
+                <a href="/pages/about.php" class="nav-link">About</a>
+                <a href="/pages/books.php" class="nav-link">Books</a>
+                <a href="/pages/login.php" class="nav-link login-button">Login</a>
             </nav>
         </div>
     </header>
@@ -35,27 +52,11 @@
             <label class="login-label">Password</label>
             <input type="password" class="login-input" required>
 
-            <a href="admin.html">
+            <a href="admin.php">
                 <button type="button" class="login-submit">Login</button>
             </a>
-
 
         </form>
     </section>
 </body>
 </html>
-
-<!-- IGNORE
-<div>Alle boeken
-    <div>foto</div>
-    <div>Titel</div>
-    <div>Author</div>
-    <div>ISBN</div>
-    <div>Language</div>
-    <div>Pages</div>
-    <div>Thema</div>
-    <div>Weight</div>
-    <div>year</div>
-</div>
-
- --->

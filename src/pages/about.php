@@ -15,57 +15,64 @@
     <div class="header-container">
         <h1 class="logo">The Book Haven</h1>
         <nav class="nav">
-            <a href="../index.html" class="nav-link ">Home</a>
-            <a href="/pages/about.html" class="nav-link underline">About</a>
-            <a href="/pages/books.html" class="nav-link">Books</a>
-            <a href="/pages/login.html" class="nav-link login-button">Login</a>
+            <a href="../index.php" class="nav-link ">Home</a>
+            <a href="/pages/about.php" class="nav-link underline">About</a>
+            <a href="/pages/books.php" class="nav-link">Books</a>
+            <a href="/pages/login.php" class="nav-link login-button">Login</a>
         </nav>
     </div>
 </header> 
 
-<section class="about-section">
+<section class="about-page">
     <div class="about-container">
 
-        <div class="about-text-block">
-            <h2 class="about-title">About The Book Haven</h2>
-            <p class="about-text">
+        <div class="about-left">
+            <div class="about-title">
+                About The Book Haven
+            </div>
+
+            <div class="about-text">
                 The Book Haven is a quiet and welcoming library where visitors can read, study,
                 and discover new stories. We offer a wide collection of books for children,
                 students and adults.
-            </p>
-            <p class="about-text">
+            </div>
+
+            <div class="about-text">
                 Our goal is to make reading easy and enjoyable. Whether you want to borrow a
                 book, work on a project, or just relax with a good story, our library is here for you.
-            </p>
+            </div>
         </div>
 
-        <div class="about-info-block">
-            <div class="about-card">
-                <h3 class="about-card-title">Our mission</h3>
-                <p class="about-card-text">
+        <div class="about-right">
+
+            <div class="about-block">
+                <div class="about-box-title">Our mission</div>
+                <div class="about-box-text">
                     We support learning, creativity and curiosity by giving access to books,
                     information and a calm place to focus.
-                </p>
+                </div>
             </div>
 
-            <div class="about-card">
-                <h3 class="about-card-title">For our visitors</h3>
-                <p class="about-card-text">
+            <div class="about-block">
+                <div class="about-box-title">For our visitors</div>
+                <div class="about-box-text">
                     Everyone is welcome: from young readers to experienced book lovers.
                     You can read on site or borrow books to take home.
-                </p>
+                </div>
             </div>
 
-            <div class="about-card">
-                <h3 class="about-card-title">Visit us</h3>
-                <p class="about-card-text">
-                    Opening hours: Monday – Friday, 09:00 – 17:00.  
-                    You can use our reading tables, study spaces and free Wi-Fi.
-                </p>
+            <div class="about-block">
+                <div class="about-box-title">Visit us</div>
+                <div class="about-box-text">
+                    Opening hours: Monday - Friday, 09:00 - 17:00.
+                    Free Wi-Fi and study spaces available.
+                </div>
             </div>
+
         </div>
 
     </div>
 </section>
+
 </body>
 </html>
