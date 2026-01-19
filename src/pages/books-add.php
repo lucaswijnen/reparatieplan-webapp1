@@ -54,9 +54,6 @@ try {
     <label class="add-book-label">ISBN</label>
     <input type="text" name="isbn" class="add-book-input" required>
 
-    <label class="add-book-label">Year</label>
-    <input type="date" name="year" class="add-book-input" required>
-
     <label class="add-book-label">Description</label>
     <textarea name="description" class="add-book-textarea" required></textarea>
 

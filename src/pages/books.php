@@ -7,11 +7,11 @@ $Password="user";
 try {
     $pdo = new PDO(
         "mysql:host=$host;dbname=$Database;charset=utf8", $User, $Password);
-        
-    echo "Verbonden";
 } catch (PDOException $error) {
-    echo "fout";
+ 
 }
+
+$books = $pdo->query("SELECT * FROM books")->fetchAll();
 
 ?>
 
@@ -46,36 +46,30 @@ try {
   <div class="admin-box">
 
     <div class="admin-header">
-      <h2 class="admin-title">All Books</h2>
+      <h2 class="admin-title">Books</h2>
     </div>
 
     <div class="books-list">
+      <?php foreach ($books as $book): ?>
+        <div class="book-card">
+          <img src="<?= $book['image'] ?>" class="book-image" alt="">
 
-      <div class="book-card">
-        <img src="../img/boek1.jpg" class="book-image">
+          <p class="book-title"><?= $book['title'] ?></p>
+          <p class="book-author"><?= $book['author'] ?></p>
 
-        <p class="book-title">Harry Potter</p>
-        <p class="book-author">J.K. Rowling</p>
-      </div>
+          <p class="book-status">
+            <?= $book['status'] == 1 ? 'Uitgeleend' : 'Beschikbaar' ?>
+          </p>
 
-      <div class="book-card">
-        <img src="../img/boek2.jpg" class="book-image">
+          <p class="book-isbn">ISBN: <?= $book['ISBN'] ?></p>
 
-        <p class="book-title">The Hobbit</p>
-        <p class="book-author">J.R.R. Tolkien</p>
-      </div>
-
-      <div class="book-card">
-        <img src="../img/boek3.jpg" class="book-image">
-
-        <p class="book-title">1984</p>
-        <p class="book-author">George Orwell</p>
-      </div>
-
+          <p class="book-discription"><?= $book['discription'] ?></p>
+        </div>
+      <?php endforeach; ?>
     </div>
+
   </div>
 </main>
-
 
 </body>
 </html>

@@ -259,10 +259,8 @@ body {
   border: 1px solid #E6E6E6;
   border-radius: 12px;
   padding: 14px;
-
   display: flex;
   flex-direction: column;
-
   min-height: 320px;
 }
 
@@ -271,7 +269,6 @@ body {
   height: 200px;
   border-radius: 8px;
   margin-bottom: 12px;
-
   object-fit: contain;
   background-color: #ffffff;
 }
@@ -284,6 +281,17 @@ body {
 .book-author {
   font-size: 14px;
   margin: 0 0 16px 0;
+}
+
+.book-discription {
+    font-size: 13px;
+    margin: 0 0 12px 0;
+    flex-grow: 1;
+}
+
+.book-isbn {
+    font-size: 13px;
+    margin: 0 0 12px 0;
 }
 
 .book-buttons {

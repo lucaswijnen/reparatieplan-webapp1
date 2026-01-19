@@ -4,6 +4,8 @@ $Database="bieb";
 $User="user";
 $Password="user";
 
+session_start();
+
 try {
     $pdo = new PDO(
         "mysql:host=$host;dbname=$Database;charset=utf8", $User, $Password);
@@ -12,6 +14,11 @@ try {
 } catch (PDOException $error) {
     echo "fout";
 }
+
+// if session login niet bestaat // redirect naar login pagina
+
+
+$books = $pdo->query("SELECT * FROM books")->fetchAll();
 
 ?>
 
@@ -54,56 +61,32 @@ try {
     </div>
 
     <div class="books-list">
+      <?php foreach ($books as $book): ?>
+        <div class="book-card">
+          <img src="<?= $book['image'] ?>" class="book-image" alt="">
 
+          <p class="book-title"><?= $book['title'] ?></p>
+          <p class="book-author"><?= $book['author'] ?></p>
 
+          <p class="book-status">
+            <?= $book['status'] == 1 ? 'Uitgeleend' : 'Beschikbaar' ?>
+          </p>
+          <p class="book-isbn">
+            ISBN: <?= $book['ISBN'] ?>
+          </p>
 
-      <div class="book-card">
-        <img src="../img/boek1.jpg" class="book-image">
+          <p class="book-discription"> <?= $book['discription'] ?></p>
 
-        <p class="book-title">Harry Potter</p>
-        <p class="book-author">J.K. Rowling</p>
-
-        <div class="book-buttons">
-          <a href="books-detail.php" class="edit-button">Change</a>
-          <a href="books-delete.php" class="delete-button">Delete</a>
+          <div class="book-buttons">
+            <a href="books-detail.php?id=<?= $book['id'] ?>" class="edit-button">Change</a>
+            <a href="books-delete.php?id=<?= $book['id'] ?>" class="delete-button">Delete</a>
+          </div>
         </div>
-      </div>
-
-
-
-      <div class="book-card">
-        <img src="../img/boek2.jpg" class="book-image">
-
-        <p class="book-title">The Hobbit</p>
-        <p class="book-author">J.R.R. Tolkien</p>
-
-        <div class="book-buttons">
-          <a href="books-detail.php" class="edit-button">Change</a>
-          <a href="books-delete.php" class="delete-button">Delete</a>
-        </div>
-      </div>
-
-
-
-
-      <div class="book-card">
-        <img src="../img/boek3.jpg" class="book-image">
-
-        <p class="book-title">1984</p>
-        <p class="book-author">George Orwell</p>
-
-        <div class="book-buttons">
-          <a href="books-detail.php" class="edit-button">Change</a>
-          <a href="books-delete.php" class="delete-button">Delete</a>
-          <!-- checkbox maken text beschikbaar -->
-        </div>
-      </div>
-
+      <?php endforeach; ?>
     </div>
+
   </div>
 </main>
-
-
 
     
 </body>

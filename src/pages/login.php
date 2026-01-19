@@ -4,13 +4,63 @@ $Database="bieb";
 $User="user";
 $Password="user";
 
+session_start(); 
+
 try {
     $pdo = new PDO(
         "mysql:host=$host;dbname=$Database;charset=utf8", $User, $Password);
-        
-    echo "Verbonden";
 } catch (PDOException $error) {
-    echo "fout";
+    // Header redirect to 5400.html page with a really nice message that something was fucked up
+
+}
+
+// Submit login formulier op basis van loginj submit $_POST['login']
+
+if (isset($_POST['login'])) {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    if (empty($username)) {
+        $errors['username'] = true;
+    }
+
+
+    if (empty($password)) {
+        $errors['password'] = true;
+    }
+
+
+    if (empty($errors)) {
+        // Alle usernames en passwords uit de database halen
+        // $sql = "SELECT * FROM users";
+        // $result = $pdo->query($sql);
+        // $result = $result->fetch();
+
+        // print_r($result);exit;
+
+        $sql = "SELECT * FROM users WHERE username = :username AND password = :password LIMIT 1";
+        
+        $stmt = $pdo->prepare($sql);
+        $stmt->bindParam(':username', $username);
+        $stmt->bindParam(':password', $password);
+        
+        $result = $stmt->fetch();
+        
+
+print_r($result);exit;
+
+
+        if ($result->rowCount() === 1) {
+            // Match gevonden, doorsturen naar admin.php
+            $_SESSION['loggedin_user'] = $result;
+
+            header("Location: admin.php");
+            exit;
+        } else {
+            // Geen match, foutmelding weergeven
+            $errors['login'] = true;
+        }
+    }
 }
 
 ?>
@@ -30,6 +80,16 @@ try {
 </head>
 
 <body>
+
+    <style>
+
+    .error {
+        color: red;
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+    </style>
+
     <header class="header">
         <div class="header-container">
             <h1 class="logo">The Book Haven</h1>
@@ -43,17 +103,37 @@ try {
     </header>
 
     <section class="login-section">
-        <form class="login-form">
+        <form class="login-form" method="post">
             <h2 class="login-title">Login</h2>
 
+            <?php if (isset($errors['login'])) { ?>
+                <h2>Ongeldige combit</h2>
+            <?php } ?>
+
+            <?php if (isset($errors['username'])) { ?>
+                <div class="error">
+                    username verplicht
+                </div>
+            <?php } ?>
+
+            <?php if (isset($errors['password'])) { ?>
+                <div class="error">
+                    password verplicht
+                </div> 
+            <?php } ?>
+
+
             <label class="login-label">Username</label>
-            <input type="text" class="login-input" required>
+            <input type="text" class="login-input" name="username" required>
+
+          
 
             <label class="login-label">Password</label>
-            <input type="password" class="login-input" required>
+            <input type="password" name="password" class="login-input" required>
 
+      
             <a href="admin.php">
-                <button type="button" class="login-submit">Login</button>
+                <button type="submit" name="login" class="login-submit">Login</button>
             </a>
 
         </form>
